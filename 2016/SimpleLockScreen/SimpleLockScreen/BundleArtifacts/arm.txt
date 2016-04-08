@@ -1,0 +1,2 @@
+MainPackage=C:\Users\hectorb\Dropbox\Work\SimpleLockScreen\SimpleLockScreen\bin\ARM\Debug\SimpleLockScreen_1.0.6.0_ARM_Debug.appx
+SymbolPackage=C:\Users\hectorb\Dropbox\Work\SimpleLockScreen\SimpleLockScreen\AppPackages\SimpleLockScreen_1.0.6.0_Debug_Test\SimpleLockScreen_1.0.6.0_ARM_Debug.appxsym

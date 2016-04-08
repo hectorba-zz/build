@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="SimpleReader.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleReader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="Mobile&#x9;&#x9;" TextWrapping="Wrap" />
+        <Grid Margin="0,288,10,0" HorizontalAlignment="Right" Width="350" Height="352" VerticalAlignment="Top">
+            <ListView x:Name="articlesListView" Margin="0,0,0,13" ScrollViewer.VerticalScrollMode="Enabled" SelectionMode="None" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="350" Height="338" VerticalAlignment="Bottom">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:CustomRSSItem">
+                        <StackPanel Margin="0,20,0,20">
+                            <Image Source="{x:Bind myImage}" />
+                            <Button x:Name="Like" Content="Like" Click="Like_Click"></Button>
+                            <TextBlock Text="{x:Bind mySyndicationItem.Title.Text}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <ListView x:Name="subscriptionsListView" HorizontalAlignment="Left" Height="143" Margin="10,10,0,0" VerticalAlignment="Top" Width="249" Loading="subscriptionsListView_Loading" SelectionChanged="subscriptionsListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FeedName}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="refreshButton" Grid.Row="0" Margin="10,256,0,0" Height="32" Width="76" Content="Cache" VerticalAlignment="Top" Background="#33000000" Foreground="Black" Click="refreshButton_Click" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.499,1.201">
+        	<Run Text="# of posts to cache" />
+        	<LineBreak />
+        	<Run />
+        </TextBlock>
+        <TextBox x:Name="postsToCacheTextBox" HorizontalAlignment="Left" Margin="150,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" InputScope="Number" RenderTransformOrigin="0.485,-2.725" Loading="postsToCacheTextBox_Loading" LostFocus="postsToCacheTextBox_LostFocus" />
+        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="219,212,0,0" VerticalAlignment="Top" Width="74" IsEnabled="False" Click="buttonAdd_Click" />
+        <TextBox x:Name="addFeedTextBox" HorizontalAlignment="Left" Margin="13,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" InputScope="Url" RenderTransformOrigin="0.485,-2.725" Width="201" TextChanged="addFeedTextBox_TextChanged" />
+    </Grid>
+</Page>

@@ -1,0 +1,2 @@
+MainPackage=C:\Users\hectorb\Dropbox\Work\SimpleReader\SimpleReader\bin\x86\Debug\SimpleReader_1.0.7.0_x86_Debug.appx
+SymbolPackage=C:\Users\hectorb\Dropbox\Work\SimpleReader\SimpleReader\AppPackages\SimpleReader_1.0.7.0_Debug_Test\SimpleReader_1.0.7.0_x86_Debug.appxsym
